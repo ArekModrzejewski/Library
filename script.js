@@ -1,4 +1,10 @@
 const bookContainer = document.querySelector('.bookContainer')
+const bookForm = document.getElementById('bookForm')
+const author = document.getElementById('author')
+const title = document.getElementById('title')
+const pages = document.getElementById('pages')
+const finished = document.getElementById('finished')
+
 let myLibrary = []
 
 function Book(author, title, pages, read) {
@@ -7,9 +13,6 @@ function Book(author, title, pages, read) {
     this.pages = pages
     this.read = read
 }
-let book = new Book('Andrzej Sapkowski', 'Wiedźmin: Ostatnie Życzenie', 320, false)
-
-myLibrary.push(book)
 
 function addBookToContainer(newBook) {
     const card = document.createElement('div')
@@ -21,5 +24,15 @@ function addBookToContainer(newBook) {
 function displayBooks() {
     myLibrary.forEach(element => addBookToContainer(element)) 
 }
+
+bookForm.addEventListener('submit', (e) => {
+    e.preventDefault()
+    let book = new Book(author.value, title.value, pages.value, finished.checked)
+    myLibrary.push(book)
+    addBookToContainer(book)
+    author.value = ''
+    title.value  = ''
+    pages.value = undefined
+})
 
 displayBooks()

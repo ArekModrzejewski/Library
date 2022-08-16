@@ -14,16 +14,16 @@
         <div class="bookContainer">
 
         </div>
-        <form id="book-form">
+        <form name="bookForm" action="" method="get" id="bookForm">
             <label for="author">Author</label>
-            <input type="text" id="author">
+            <input type="text" name="author" id="author">
             <label for="title">Title</label>
-            <input type="text" id="title">
+            <input type="text" name="title" id="title">
             <label for="pages">Number of pages</label>
-            <input type="number" id="pages">
+            <input type="number" name="pages" id="pages">
             <label class="switch">
                 Finished
-                <input type="checkbox">
+                <input type="checkbox" id="finished" value="finished">
                 <span class="slider round"></span>
             </label>
             <button type="submit">Add</button>
