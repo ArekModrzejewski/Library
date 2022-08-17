@@ -1,4 +1,5 @@
 const bookContainer = document.querySelector('.bookContainer')
+const formButton = document.getElementById('addBook')
 const bookForm = document.getElementById('bookForm')
 const author = document.getElementById('author')
 const title = document.getElementById('title')
@@ -35,4 +36,15 @@ bookForm.addEventListener('submit', (e) => {
     pages.value = undefined
 })
 
+formButton.addEventListener('click', () => {
+    let popupStatus = bookForm.style.display
+    switch (popupStatus) {
+        case 'grid':
+            bookForm.style.display = ''
+            break
+        case '':
+            bookForm.style.display = 'grid'
+            break 
+    }
+})
 displayBooks()
