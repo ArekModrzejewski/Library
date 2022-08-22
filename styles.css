@@ -132,13 +132,11 @@ main {
 
 #addBook {
 	font-size: 36px;
-	width: 60px;
-	height: 60px;
 	border-radius: 30px;
+	padding: 10px 20px;
 	background-color: var(--third-color);
 	color: var(--first-color);
 	border: none;
-	line-height: 36px;
 	text-align: center;
 	transition: transform .5s;
 }
