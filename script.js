@@ -15,6 +15,7 @@ function Book(author, title, pages, read) {
     this.read = read
 }
 
+//creates book object on display
 function addBookToContainer(newBook) {
     const card = document.createElement('div')
     bookContainer.appendChild(card)
@@ -22,10 +23,12 @@ function addBookToContainer(newBook) {
     card.innerHTML = `<p>Author: ${newBook.author}<br>Title: ${newBook.title}<br>Pages: ${newBook.pages}<br>Read: ${newBook.read}<p>`
 }
 
+//displays all books objects from myLibrary array
 function displayBooks() {
     myLibrary.forEach(element => addBookToContainer(element)) 
 }
 
+//adds book to the array and displays it on page, clears form
 bookForm.addEventListener('submit', (e) => {
     e.preventDefault()
     let book = new Book(author.value, title.value, pages.value, finished.checked)
@@ -36,6 +39,7 @@ bookForm.addEventListener('submit', (e) => {
     pages.value = undefined
 })
 
+//shows form when button is clicked
 formButton.addEventListener('click', () => {
     let popupStatus = bookForm.style.display
     switch (popupStatus) {
@@ -47,4 +51,4 @@ formButton.addEventListener('click', () => {
             break 
     }
 })
-displayBooks()
+
