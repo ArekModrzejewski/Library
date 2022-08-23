@@ -20,12 +20,15 @@ function addBookToContainer(newBook) {
     const card = document.createElement('div')
     bookContainer.appendChild(card)
     card.classList.add('book')
-    card.innerHTML = `<p>Author: ${newBook.author}<br>Title: ${newBook.title}<br>Pages: ${newBook.pages}<br>Read: ${newBook.read}<p>`
+    card.innerHTML = `<div>Author:<br> ${newBook.author}</div>
+                        <div>Title:<br> ${newBook.title}</div>
+                        <div>Pages:<br> ${newBook.pages}</div>
+                        <div>Read:<br> ${newBook.read}</div>`
 }
 
-//displays all books objects from myLibrary array
+//displays all books objects from myLibrary array</div>
 function displayBooks() {
-    myLibrary.forEach(element => addBookToContainer(element)) 
+    myLibrary.forEach(element => addBookToContainer(element))
 }
 
 //adds book to the array and displays it on page, clears form
@@ -35,7 +38,7 @@ bookForm.addEventListener('submit', (e) => {
     myLibrary.push(book)
     addBookToContainer(book)
     author.value = ''
-    title.value  = ''
+    title.value = ''
     pages.value = undefined
 })
 
@@ -48,7 +51,7 @@ formButton.addEventListener('click', () => {
             break
         case '':
             bookForm.style.display = 'grid'
-            break 
+            break
     }
 })
 

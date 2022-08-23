@@ -79,13 +79,20 @@ h1 {
 	background-color: var(--third-color);
 	display: flex;
 	flex-direction: column;
-	gap: 20px;
-	height: 240px;
-	width: 160px;
+	gap: 10px;
+	height: 280px;
+	width: 180px;
 	border-end-end-radius: 20px;
 	border-top-right-radius: 20px;
 	padding: 20px;
 	transition: transform .5s;
+	border-left: 10px solid var(--second-color);
+}
+
+.book div {
+	display: flex;
+	flex-wrap: wrap;
+	word-wrap: anywhere;
 }
 
 .book:hover{
@@ -94,7 +101,7 @@ h1 {
 #bookForm {
 	background-color: var(--second-color);
 	color: var(--first-color);
-	font-weight: 800;
+	font-weight: 1000;
 	font-size: 24px;
 	border-radius: 20px;
 	display: none;
