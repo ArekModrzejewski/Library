@@ -5,6 +5,7 @@ const author = document.getElementById('author')
 const title = document.getElementById('title')
 const pages = document.getElementById('pages')
 const finished = document.getElementById('finished')
+const finishedButton = document.getElementsByClassName('finishedButton')
 
 let myLibrary = []
 
@@ -15,6 +16,11 @@ function Book(author, title, pages, read) {
     this.read = read
 }
 
+function displayFinished(status) {
+    if(status) return 'finished'
+    return 'not finished'
+}
+
 //creates book object on display
 function addBookToContainer(newBook) {
     const card = document.createElement('div')
@@ -23,7 +29,7 @@ function addBookToContainer(newBook) {
     card.innerHTML = `<div>Author:<br> ${newBook.author}</div>
                         <div>Title:<br> ${newBook.title}</div>
                         <div>Pages:<br> ${newBook.pages}</div>
-                        <div>Read:<br> ${newBook.read}</div>`
+                        <button class="finishedButton">${displayFinished(newBook.read)}</button>`
 }
 
 //displays all books objects from myLibrary array</div>
@@ -53,5 +59,9 @@ formButton.addEventListener('click', () => {
             bookForm.style.display = 'grid'
             break
     }
+})
+
+finishedButton.addEventListener('click', (e) => {
+    (e.target).textContent = 'finished'
 })
 

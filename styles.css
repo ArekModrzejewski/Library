@@ -71,12 +71,12 @@ header {
 }
 
 h1 {
-	font-size: 80px;
+	font-size: 90px;
 	font-weight: 800;
 }
 
 .book {
-	background-color: var(--third-color);
+	background-color: var(--second-color);
 	display: flex;
 	flex-direction: column;
 	gap: 10px;
@@ -86,7 +86,7 @@ h1 {
 	border-top-right-radius: 20px;
 	padding: 20px;
 	transition: transform .5s;
-	border-left: 10px solid var(--second-color);
+	border-left: 10px solid var(--third-color);
 }
 
 .book div {
@@ -100,7 +100,6 @@ h1 {
 }
 #bookForm {
 	background-color: var(--second-color);
-	color: var(--first-color);
 	font-weight: 1000;
 	font-size: 24px;
 	border-radius: 20px;
@@ -176,6 +175,5 @@ label {
 	justify-content: center;
 	gap: 60px;
 	padding: 16px 60px;
-	color: var(--first-color);
 	font-weight: 800;
 }
